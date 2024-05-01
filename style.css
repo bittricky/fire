@@ -1,0 +1,52 @@
+:root {
+  --background-color: #000;
+  --fire-color: #ff9900;
+  --base-font-size: 16px;
+}
+
+body {
+  background: var(--background-color);
+  height: 100vh;
+  overflow: hidden;
+  font-size: var(--base-font-size);
+}
+
+#ignite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -7.8125em;
+  transform: translate(-50%, -50%);
+  transition: 0.1s;
+}
+
+.fire {
+  position: relative;
+  width: 31.25em;
+  height: 31.25em;
+  background: var(--fire-color);
+  filter: blur(1.25em) contrast(30);
+  border: 15.625em solid var(--background-color);
+  border-bottom-color: transparent;
+  border-radius: 40%;
+  box-sizing: border-box;
+  transform: scale(0.4, 1);
+}
+
+.flame {
+  position: absolute;
+  top: 31.25em;
+  left: -3.125em;
+  width: 6.25em;
+  background: var(--background-color);
+  border-radius: 100%;
+}
+
+@keyframes burning {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-37.5em);
+  }
+}
